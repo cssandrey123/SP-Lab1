@@ -6,7 +6,7 @@ import java.util.List;
 public class Book {
     private String title;
     private Author author;
-    private List<Chapter> chapters = new ArrayList<Chapter>();
+    private Element elements = null;
 
 
     Book(String title){
@@ -24,13 +24,15 @@ public class Book {
         this.author = autor;
     }
 
-    public int createChapter(String chapterTitle) {
-        this.chapters.add(new Chapter(chapterTitle));
-        return this.chapters.size()-1;
+    public void addContent(Element content) {
+        this.elements = content;
     }
 
-    public Chapter getChapter(int index) {
-        return this.chapters.get(index);
+    public void print() {
+        if(this.elements != null) {
+            elements.print();
+        }
     }
+
 
 }
