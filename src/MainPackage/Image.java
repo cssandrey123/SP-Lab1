@@ -1,6 +1,6 @@
 package MainPackage;
 
-public class Image {
+public class Image implements Element {
     String image;
     Image(String image) {
         this.image = image;
@@ -11,5 +11,10 @@ public class Image {
         return "Image{" +
                 "image='" + image + '\'' +
                 '}';
+    }
+
+    @Override
+    public void print() {
+        System.out.println(this.toString());
     }
 }

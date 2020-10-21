@@ -1,6 +1,6 @@
 package MainPackage;
 
-public class Paragraph {
+public class Paragraph implements Element {
     String pText;
     Paragraph(String text) {
         this.pText = text;
@@ -11,5 +11,10 @@ public class Paragraph {
         return "Paragraph{" +
                 "pText='" + pText + '\'' +
                 '}';
+    }
+
+    @Override
+    public void print() {
+        System.out.println(this.toString());
     }
 }
