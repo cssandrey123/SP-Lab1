@@ -2,10 +2,20 @@ package MainPackage;
 
 public class Paragraph implements Element {
     String pText;
+    AlignStrategy alStr;
     Paragraph(String text) {
         this.pText = text;
     }
 
+
+
+    public void setAlignStrategy(AlignStrategy alStr) {
+        this.alStr = alStr;
+    }
+
+    public String getpText() {
+        return pText;
+    }
     @Override
     public String toString() {
         return "Paragraph{" +
@@ -13,8 +23,13 @@ public class Paragraph implements Element {
                 '}';
     }
 
+
     @Override
     public void print() {
-        System.out.println(this.toString());
+        if(alStr == null) {
+            System.out.println(this.toString());
+            return;
+        }
+        alStr.render(this, new Context());
     }
 }
